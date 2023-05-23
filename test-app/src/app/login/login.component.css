@@ -1,24 +1,28 @@
 mat-card {
-    max-width: 300px;
-    margin: 0 auto;
-    margin-top: 100px;
-    padding: 20px;
-  }
-  
-  mat-card-title {
-    text-align: center;
-    font-size: 24px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  mat-form-field {
-    margin-bottom: 20px;
-  }
-  
-  button {
-    align-self: center;
-  }
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 20px;
+}
+
+mat-card-title {
+  text-align: center;
+  font-size: 24px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  margin-bottom: 20px;
+}
+
+button {
+  align-self: center;
+}
+
+.mat-mdc-card:not([class*=mat-elevation-z]) {
+  box-shadow: 00px 0px 5px 3px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
