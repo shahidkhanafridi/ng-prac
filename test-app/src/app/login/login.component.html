@@ -1,4 +1,4 @@
-<mat-card>
+<!-- <mat-card>
   <mat-card-title>Login</mat-card-title>
   <mat-card-content>
     <form (submit)="onSubmit()">
@@ -13,28 +13,28 @@
       <button mat-raised-button color="primary" type="submit">Login</button>
     </form>
   </mat-card-content>
-</mat-card>
-
-<!-- <mat-card>
-  <mat-card-title>Login</mat-card-title>
-<mat-card-content>
-<form [formGroup]="form" (ngSubmit)="submit()">
-<p>
-  <mat-form-field>
-    <input type="text" matInput placeholder="Username" formControlName="username">
-  </mat-form-field>
-</p>
-
-<p>
-  <mat-form-field>
-    <input type="password" matInput placeholder="Password" formControlName="password">
-  </mat-form-field>
-</p>
-
-<div class="button">
-  <button type="submit" mat-button>Login</button>
-</div>
-
-</form>
-</mat-card-content>
 </mat-card> -->
+
+<mat-card>
+  <mat-card-title>Login</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="text" formControlName="email">
+        <mat-error *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+          <div *ngIf="loginForm.get('email')?.hasError('required')">Email is required.</div>
+          <div *ngIf="loginForm.get('email')?.hasError('email')">Invalid email format.</div>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password">
+        <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          <div *ngIf="loginForm.get('password')?.hasError('required')">Password is required.</div>
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+    </form>
+  </mat-card-content>
+</mat-card>
