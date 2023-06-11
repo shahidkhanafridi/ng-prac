@@ -48,7 +48,8 @@ export class LoginComponent implements OnInit {
       const {email, password}=this.loginForm.value;
       console.log("Email", email);
       console.log('Password', password);
-      this.router.navigate(['/dashboard']);
+      // this.router.navigate(['/home']);
+      window.location.reload();
     }else {
       this.loginForm.markAllAsTouched();
     }
